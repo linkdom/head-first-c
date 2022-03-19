@@ -10,31 +10,49 @@
 int main()
 {
 	char card[3];
-	puts("Please enter a card: ");
-	scanf("%s", card);
-    int val = 0;
+    int count = 0;
+    int execute = 1;
 
-    switch(card[0]) {
-        case 'K':
-        case 'Q':
-        case 'J':
-            val = 10;
-            break;
-        case 'A':
-            val = 11;
-        default:
-            val = atoi(card);
-    }
+    do {
+        puts("Please enter a card: ");
+        scanf("%s", card);
+        int val = 0;
+        switch(card[0]) {
+            case 'K':
+            case 'Q':
+            case 'J':
+                val = 10;
+                break;
+            case 'A':
+                val = 11;
+                break;
+            case 'X':
+                execute = 0;
+            default:
+                if(val <= 10)
+                    val = atoi(card);
+                else
+                    puts("Invalid card");
 
-    printf("The card value is: %i\n", val);
+        }
 
-	if(val >= 3 && val <= 6) {
-        puts("Count has gone up");
-    }
-	else if(val == 10) {
-        puts("Count has gone down");
-    }
 
-	return 0;
+        if(val >= 3 && val <= 6) {
+            puts("Count has gone up");
+            count++;
+        }
+        else if(val == 10) {
+            puts("Count has gone down");
+            count--;
+        }
+
+        printf("Current count is: %i\n", count);
+
+    } while (execute);
+    return 0;
+
+
+
+
 
 }
