@@ -9,9 +9,7 @@ int y = 0;
 void fortune_cookie(char msg[])
 {
     printf("Message reads: %s\n", msg);
-    printf("Msg occupies %lu bytes\n", sizeof(*msg));
-    //somethings off here and i cant figure out what.
-    //sizeof needs a pointer to the message? Even tough the book states otherwise
+    printf("Msg occupies %i bytes\n", sizeof(msg));
 }
 
 int main () {
