@@ -17,6 +17,7 @@ int main () {
     printf("x is stored at %p\n", &x);
     printf("y is stored at %p\n", &y);
     char quote[] = "Cookies make you fat";
+    printf("Size of the array is: %i\n", sizeof(quote));
     printf("The quote string is stored at: %p\n", quote);
     fortune_cookie(quote);
 }
