@@ -2,6 +2,7 @@
 
 int main()
 {
+    //char cards[] = "JQK"; //Working
     char *cards = "JQK";
     char a_card = cards[2];
     cards[2] = cards[1];

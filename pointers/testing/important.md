@@ -21,6 +21,15 @@ scanf("%i", &floatingVariable)
 As an alternative we might want to use fgets since it takes three arguments fgets(array, sizeof(array), stdin) so it needs the length of the array to even execute which is more secure
 
 ####Again, care is needed with sizeof() since it could return the size of the pointer if we are careless
-###Dont't use gets()!
+####Dont't use gets()!
+
+###Memory
+(Highest to Lowest)
+
+- Stack
+- Heap
+- Globals
+- Constants (Read-only section)
+- Code (Read-only section)
 
 
