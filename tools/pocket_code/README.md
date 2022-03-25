@@ -1,4 +1,4 @@
-#Summary
+# Summary
 
 ### Piping
 Programs can be piped together by using the | between the two program calls. E.g. (./program1 | ./program2)  
