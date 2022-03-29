@@ -48,6 +48,11 @@ Or:
 ` q.weight = 1.5 `  
 Which I find the easiest and will probably use the most.
 
+
+Why is a union always set to the size of the largest field?  
+The Computer needs to make sure that a union is always the same size.  
+The only way it can do that is by making sure it is large enough to contain any of the fields.  
+
 ***Remember:  
 Whichever way we set the union's value, there will only ever be one piece of data stored.  
 The union just fives us a way of creating a variable that supports several different data types***
