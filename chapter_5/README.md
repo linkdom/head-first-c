@@ -56,3 +56,22 @@ The only way it can do that is by making sure it is large enough to contain any 
 ***Remember:  
 Whichever way we set the union's value, there will only ever be one piece of data stored.  
 The union just fives us a way of creating a variable that supports several different data types***
+
+### Unions are often used with structs  
+
+Once you've created a union, you've created a new *data type*.  
+That means you can use its values anywhere you would use another data type like an int or a struct.  
+For example, you can combine them with structs:  
+```
+typedef struct {
+    const char *name;
+    const char *country;
+    quantity amount;
+} fruit_order;
+```  
+And you can access the values in the struct/union combination using the dor or -> notation you used before:
+
+```
+fruit_order apples = {"apples", "England", .amount.weight=4.2};
+printf("This order contains %2.2f lbs of %s\n", apples.anount.weight, apples.name);    
+```
