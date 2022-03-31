@@ -119,3 +119,16 @@ But it's good practice to always explicitly free anything you've created.
  - The heap is used for long-term storage. You allocate space with malloc().
  - The sizeof operator will tell you how much space a struct needs.
  - Data will stay on the heap until you release it with free().
+
+## Binary Tree
+A **binary tree** allows each piece of data to connect to two other pieces of data.  
+
+## valgrind
+#### (named after the entrance to valhalla)
+ - valgrind checks for memory leaks.
+ - valgrind works by intercepting the calls to malloc() and free()
+ - when a program stops running, valgrind prints details of what's left on the heap.
+ - if you compile your code with debug information, valgrind can give you more information.
+ - if you run your program several times, you can narrow the search for the leak.
+ - valgrind can tell you which lines of code in your source put the data on the heap.
+ - valgrind can be used to check that you've fixed a leak.
