@@ -109,7 +109,7 @@ It will depend on how the C Standard Library is implemented, but most of the tim
 You don't have to; the operating system will clear away all of the memory when the program exits.
 But it's good practice to always explicitly free anything you've created.
 
-##Bullet Points
+## Bullet Points
 
  - Dynamic data structures allow you to store a variable number of data items.
  - A linked list is a data structure that allows you to easily insert items.
