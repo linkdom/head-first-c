@@ -2,7 +2,7 @@
 
 ## Linked Lists
 A **linked list** is an example of an **abstract data structure.**  
-It's called an *abstract* data structure because a linked ist is *general*: it can be used to store a lot of different kinds of data.  
+It's called an *abstract* data structure because a linked list is *general*: it can be used to store a lot of different kinds of data.  
 In a linked list, as long as you know where the list starts, you can travel along the list of links, from one piece of data
 to the next, until you reach the end of the list.  
 
@@ -32,7 +32,7 @@ Yes, you do.
 **So if I want a data structure that lets me insert things quickly, I need a linked list, but if I want direct access I might use an array?**  
 Exactly.  
 **Can a *struct* contain a whole recursive *struct* itself?**  
-No.
+No.  
 **Why not?**  
 C needs to know the exact amount of space a struct will occupy in memory.  
 If it allowed full recursive copies of the same struct, then one piece of data would be a different size than another.  
@@ -109,7 +109,7 @@ It will depend on how the C Standard Library is implemented, but most of the tim
 You don't have to; the operating system will clear away all of the memory when the program exits.
 But it's good practice to always explicitly free anything you've created.
 
-##Bullet Points
+## Bullet Points
 
  - Dynamic data structures allow you to store a variable number of data items.
  - A linked list is a data structure that allows you to easily insert items.
