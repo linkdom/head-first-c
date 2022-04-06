@@ -28,6 +28,14 @@ You can assign values to it, you can add it to arrays, and you can also pass it 
 This might help to memorize and understand function pointers a little better:  
 ![function pointers](function_pointers.png "Function Pointers")
 
+```
+qsort(void *array,
+	size_t length,
+	size_t item_size,
+	int (*compar) (const void *, const void *));
+```
+const void * is a function pointer and it can point to anything
+
 ## Q&A
 
 ***What does char\*\* mean?***  
@@ -41,3 +49,4 @@ Yes. Instead of find(sports_or_workout), you could have written find(&sports_or_
 
 ***Then why didn't I?***  
 Because it makes the code easier to read. If you skip the * and &, C will still understand what you're saying.
+
