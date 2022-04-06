@@ -34,7 +34,7 @@ qsort(void *array,
 	size_t item_size,
 	int (*compar) (const void *, const void *));
 ```
-const void * is a function pointer and it can point to anything
+const void * is a pointer that can point to anything
 
 ## Q&A
 
