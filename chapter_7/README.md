@@ -69,3 +69,48 @@ Yes. Instead of find(sports_or_workout), you could have written find(&sports_or_
 ***Then why didn't I?***  
 Because it makes the code easier to read. If you skip the * and &, C will still understand what you're saying.
 
+## Create an array of function pointers
+
+If we had an array variable that could store a whole bunch of function names, you could use it like this:  
+`replies[] = {dump, second_chance, marriage};`  
+But that syntax doesn't quite work in C. We have to tell the compiler exactly what the functions will look like 
+that we are going to store in the array: what their return types will be and what parameters they'll accept.  
+That means we have to use this **much more complex** syntax:  
+![function pointer arrays](function_pointer_arrays.png "Function Pointer Arrays")
+
+
+### How they come together
+
+`enum response_type {DUMP, SECOND_CHANCE, MARRIAGE};`  
+This enum stores a value for each item (0,1,2...)  
+
+And that is amazing because it means we can get a pointer to one of our functions using a **response_type**:  
+`replies[SECOND_CHANCE] == second_chance;`
+
+So to call it we can use this:  
+![array function pointers call](array_function_pointers_call.png "Array function pointers call")
+
+### Bullet Points
+ - Function pointers store the address of functions.
+ - The name of each function is actually a function pointer.
+ - If you have a function shoot(), then shoot and &shoot are both pointers to that function.
+ - You declare a new function pointer with return-type(*var-name)(param-types).
+ - If fp is a function pointer, you can call it with fp(params, ...).
+ - Or, you can use (*fp)(params, ...). C will work the same way.
+ - The C Standard Library has a sorting function called qsort().
+ - qsort() accepts a pointer to a ***comparator function*** that can test for (in)equality.
+ - The comparator function will be passed **pointers** to two items in the array being sorted.
+ - If you have an array of data, you can associate functions with each data item using function pointer arrays.
+
+
+## Q&A
+***Why is the function pointer array syntax so complex?***  
+Because when you declare a function pointer, you need to say what the return and parameter types are.  
+
+***This looks a little like the sort of object-oriented code in other languages. Is it?***  
+It's similar. Object-oriented languages associate a set of functions (called *methods*) with pieces of data.
+In the same way, you can use function pointers to associate functions with pieces of data.  
+
+***Hey, so does that mean that C is object oriented?***  
+No. C is not object oriented, but other languages that are built on C, like Objective-C and C++, create a lot of their
+object-oriented features by using function pointers under the covers.
