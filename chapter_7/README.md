@@ -36,6 +36,25 @@ qsort(void *array,
 ```
 const void * is a pointer that can point to anything
 
+Values are always passed to the function as pointers, so the first thing we need to do is get the 
+integer values from the pointer:
+
+```a
+int a = *(int*)score_a;
+int b = *(int*)score_b;
+```
+We need to cast the void pointer to an integer point.  
+The first * then gets the int stored at address score_b.
+
+Then we need to return a positive, negative or zero value, depending on whether a is greater than, less than, or equal to b.  
+For integers that's pretty easy to do - we just need to subtract one number from the other.
+
+And this is how we ask qsort() to sort an array:
+```
+qsort(array, 7, sizeof(int), compare_scores);
+```
+Where 7 is just the length of the array.
+
 ## Q&A
 
 ***What does char\*\* mean?***  
