@@ -114,3 +114,24 @@ In the same way, you can use function pointers to associate functions with piece
 ***Hey, so does that mean that C is object oriented?***  
 No. C is not object oriented, but other languages that are built on C, like Objective-C and C++, create a lot of their
 object-oriented features by using function pointers under the covers.
+
+## Variadic functions
+
+A function that takes a variable number of parameters is called a ***variadic function.***  
+The C Standard Library contains a set of **macros** that can help us create our own variadic functions.  
+![variadic function macros](variadic_functions.png "Variadic Function Macros")
+![variadic functions explained](variadic_functions_explained.png "Variadic Function Macros Explained")
+
+### Functions vs. macros
+
+A ***macro*** is used to rewrite the code before it's compiled. The macros we're using here (va_start, va_arg, and va_end)
+might look like functions, but they actually hide secret instructions that tell the *preprocessor* how to generate lots of
+extra smart code inside our program, just before compiling it.
+
+## Q&A
+***What is a preprocessor?***  
+The preprocessor runs just before the compilation step. Among other things, the preprocessor includes the headers into the code.
+
+***Can We have a function with just variable arguments, and no fixed arguments at all?***  
+No. We need to have at least one fixed argument in order to pass its name to va_start.  
+
